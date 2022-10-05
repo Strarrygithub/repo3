@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.RepMapper">
+    <select id="selectByp" resultType="com.pojo.Rep">
+        select * from rep r  order by r.reTime desc  limit #{start},#{size}
+    </select>
+    <select id="count" resultType="Integer">
+        select count(1) from rep   
+    </select>
+    
+    <select id="getInfo" resultType="com.pojo.Rep" >
+    	select * from rep  where id=#{id}
+    </select>
+    
+    <insert id="add">
+    	insert into rep(content,reTime,infoId)
+    	values(#{content},#{reTime},#{infoId})
+    </insert>
+    
+</mapper>

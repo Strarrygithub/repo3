@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.InfoMapper">
+    <select id="selectByp" resultType="com.pojo.Info">
+        select * from Info i  order by i.last desc  limit #{start},#{size}
+    </select>
+    <select id="count" resultType="Integer">
+        select count(1) from Info i  
+    </select>
+    
+    <select id="getInfo" resultType="com.pojo.Info" >
+    	select * from Info i where i.id=#{id}
+    </select>
+    
+    <update id="updateInfo">
+    	update Info set
+    	 vCount=#{vCount},reCount=#{reCount},last=#{last}
+    	 where id=#{id}
+    </update>
+</mapper>
