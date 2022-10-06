@@ -3,3 +3,4 @@
 
 三十多岁浮点数
 水电费水电费是
+add some countent to hello.txt
